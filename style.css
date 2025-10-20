@@ -147,7 +147,8 @@ nav {
   /* KLUCZOWE: Zapewnia, że tło pokrywa cały ekran, a zawartość się mieści */
   .hero {
     min-height: 100vh; /* Gwarantuje pokrycie tłem całego ekranu */
-    padding-bottom: 3rem;
+    padding-top: 2rem;       /* Zapewni odstęp pod navbarem (opcjonalnie) */
+    padding-bottom: 5vh;
   }
 
   /* Zredukuj wszystkie marginesy i czcionki (aby zawartość zmieściła się) */
@@ -167,4 +168,5 @@ nav {
     margin-bottom: 0.5rem;
   }
 }
+
 
