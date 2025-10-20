@@ -117,6 +117,14 @@ nav {
   .nav-links li a {
     font-size: 1rem;
   }
+    .nav-welcome h1 {
+    font-size: 2.5em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
+    line-height: 1.1em;
+  }
+  .nav-welcome p {
+    font-size: 1.3em;
+    line-height: 1.1em;
+  }
 
   /* 2. Poprawka dla kontenera flag: Zmniejsz odległości i skalowanie */
   .language {
@@ -168,6 +176,7 @@ nav {
     margin-bottom: 0.5rem;
   }
 }
+
 
 
 
