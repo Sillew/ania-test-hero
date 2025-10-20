@@ -1,0 +1,142 @@
+:root {
+  --font-primary: "Cormorant";
+  --font-secondary: "Charm";
+  --shadow-standard: 10px 10px 10px grey;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* ========================================= */
+/* Sekcja: HERO / Głowna strona z navbarem */
+/* ========================================= */
+.hero {
+  height: 100vh;
+  background-image: url(./kot2-flip.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  padding: 1rem 5%;
+  background: rgba(255, 255, 255, 0.01);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 7vw;
+}
+.nav-links li a {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #173d6f;
+  transition: color 0.3s;
+}
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: -10px;
+  left: 0;
+  background-color: #bf1414;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom;
+}
+
+.language {
+  display: flex;
+  gap: 20px;
+}
+.language a {
+  display: inline-block;
+  scale: 1.5;
+  border: none;
+  cursor: pointer;
+}
+.language a:hover {
+  transition: ease 0.5s all;
+  scale: 2;
+}
+.nav-welcome {
+  /* border: 3px dotted grey; */
+  margin-top: 20vh;
+  margin-left: 10dvw;
+}
+.nav-welcome h1 {
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+  line-height: 1.5em;
+  font-family: var(--font-primary);
+  font-weight: 1000;
+  font-size: 4em;
+}
+.nav-welcome p {
+  font-family: var(--font-primary);
+  font-size: 1.3em;
+  font-weight: 1000;
+  margin-top: 1em;
+  line-height: 1.3em;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+}
+@media screen and (max-width: 900px) {
+  .nav-links {
+    gap: 1vw;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  /* 1. Poprawka dla menu: Ukryj tradycyjne linki, aby zwolnić miejsce
+       Jeśli używasz menu hamburgera, po prostu dodaj klasę do jego wyświetlenia */
+  .nav-links {
+    display: none;
+  }
+
+  /* 2. Poprawka dla kontenera flag: Zmniejsz odległości i skalowanie */
+  .language {
+    gap: 10px; /* Zmniejsz odstęp między flagami */
+  }
+
+  /* 3. Poprawka dla samych flag: Zmniejsz skalę flag na telefonie */
+  .language a {
+    scale: 1; /* KLUCZOWA ZMIANA: Wróć do skali 1 na telefonie */
+  }
+
+  /* Opcjonalnie: Zmniejsz padding w nav, aby zwiększyć dostępną szerokość */
+  nav {
+    padding: 1rem 3%;
+  }
+
+  /* Opcjonalnie: Poprawka dla nagłówka powitalnego */
+  .nav-welcome {
+    margin-left: 5dvw; /* Zmniejsz margines powitalny */
+  }
+  .nav-welcome h1 {
+    font-size: 3em; /* Zmniejsz czcionkę, jeśli jest za duża */
+  }
+}
