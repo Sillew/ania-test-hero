@@ -148,7 +148,7 @@ nav {
   .hero {
     min-height: 100vh; /* Gwarantuje pokrycie tłem całego ekranu */
     padding-top: 2rem;       /* Zapewni odstęp pod navbarem (opcjonalnie) */
-    padding-bottom: 5vh;
+    padding-bottom: 3vh;
   }
 
   /* Zredukuj wszystkie marginesy i czcionki (aby zawartość zmieściła się) */
@@ -168,5 +168,6 @@ nav {
     margin-bottom: 0.5rem;
   }
 }
+
 
 
