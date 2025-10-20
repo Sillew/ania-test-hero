@@ -134,10 +134,11 @@ nav {
 
   /* Opcjonalnie: Poprawka dla nagłówka powitalnego */
   .nav-welcome {
-    margin-left: 5dvw; /* Zmniejsz margines powitalny */
+    margin-left: 5vw; /* Zmniejsz margines powitalny */
   }
   .nav-welcome h1 {
     font-size: 3em; /* Zmniejsz czcionkę, jeśli jest za duża */
   }
 }
+
 
