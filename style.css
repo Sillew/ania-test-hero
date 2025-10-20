@@ -108,7 +108,7 @@ nav {
 /* ========================================= */
 
 /* Optymalizacja dla Tabletów (900px) i Telefonów */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   /* Sekcja: HERO / Nav */
   .nav-links {
     display: none; /* Ukryj pełne menu na telefonie */
@@ -117,12 +117,12 @@ nav {
   .nav-links li a {
     font-size: 1rem;
   }
-    .nav-welcome h1 {
-    font-size: 2.5em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
+  .nav-welcome h1 {
+    font-size: 2em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
     line-height: 1.1em;
   }
   .nav-welcome p {
-    font-size: 1.3em;
+    font-size: 1.1em;
     line-height: 1.1em;
   }
 
@@ -155,8 +155,7 @@ nav {
   /* KLUCZOWE: Zapewnia, że tło pokrywa cały ekran, a zawartość się mieści */
   .hero {
     min-height: 100vh; /* Gwarantuje pokrycie tłem całego ekranu */
-    padding-top: 2rem;       /* Zapewni odstęp pod navbarem (opcjonalnie) */
-    padding-bottom: 3vh;
+    padding-bottom: 3rem;
   }
 
   /* Zredukuj wszystkie marginesy i czcionki (aby zawartość zmieściła się) */
@@ -165,7 +164,7 @@ nav {
     margin-left: 5vw;
   }
   .nav-welcome h1 {
-    font-size: 2.5em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
+    font-size: 2em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
     line-height: 1.1em;
   }
   .nav-welcome p {
@@ -177,8 +176,135 @@ nav {
   }
 }
 
+/* ========================================= */
+/* Sekcja: CYTAT / Cytaty */
+/* ========================================= */
 
+.comment {
+  /* Zostawiamy jak było, ale zmieniamy centrowanie: */
+  height: 40vh; /* Może być za dużo na pionowym telefonie, patrz poprawka niżej */
+  display: flex; /* Używamy flexbox */
+  flex-direction: column; /* Ustawiamy elementy w kolumnie */
+  justify-content: center; /* Centrowanie w pionie */
+  align-items: center; /* Centrowanie w poziomie */
+  text-align: center;
+  /* align-content: center; - USUWAMY, bo jest specyficzne dla wielowierszowego flexbox/grid */
+  padding: 3em; /* Mniejszy padding, ale nie tak drastycznie jak 0 3em */
+}
+.comment h3 {
+  font-size: 5em;
+  font-family: var(--font-secondary);
+  font-weight: 100;
+}
+.comment p {
+  font-family: var(--font-secondary);
+  line-height: 5em;
+  font-style: italic;
+}
+@media screen and (max-width: 900px) {
+  /* ... (inne poprawki) ... */
 
+  /* Poprawka dla Sekcji: CYTAT / Cytaty */
+  .comment {
+    /* Utrzymujemy elastyczność i dodajemy marginesy pionowe dla oddechu */
+    height: fit-content; /* Lepsze niż sztywna wysokość */
+    min-height: 25vh; /* Zapewnij minimalną wysokość, żeby nie był to tylko pasek */
+    padding: 3em 1em; /* Zmniejsz padding poziomy (1em) i zostaw pionowy (3em) */
+    box-sizing: border-box; /* Upewnij się, że padding nie zwiększa szerokości poza 100% */
+  }
+  .comment h3 {
+    font-size: 2em; /* Jeszcze trochę zmniejsz rozmiar dla bardzo wąskich widoków (np. telefony pionowo) */
+    line-height: 1.2em;
+    margin-bottom: 0.5em; /* Dodaj odstęp po nagłówku */
+  }
+  .comment p {
+    font-size: 1em; /* Upewnij się, że rozmiar jest czytelny */
+    line-height: 1.5em; /* Zmniejsz odstęp między wierszami (było 5em!) */
+    margin-top: 0;
+  }
+}
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .comment {
+    height: fit-content;
+    min-height: unset;
+    padding: 1.5em 1em;
+  }
+  .comment h3 {
+    margin-top: 3em;
+    font-size: 2em;
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
+  }
+  .comment p {
+    line-height: 1.2em;
+    font-size: 1em;
+  }
+}
 
+/* OPCJONALNA KOREKTA DLA NAJWĘŻSZYCH EKRANÓW (np. poniżej 450px) */
+@media screen and (max-width: 450px) {
+  .comment {
+    padding: 2em 0.5em; /* Jeszcze mniejszy padding poziomy */
+  }
+  .comment h3 {
+    margin-top: 4em;
+    font-size: 1.5em; /* Jeszcze mniejszy rozmiar dla najwęższych widoków */
+  }
+}
+/* ========================================= */
+/* Sekcja: KROTKA OFERTA
+/* ========================================= */
+.small-offer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  margin: 6em 0;
+}
+.small-offer-middle {
+  flex: 0.6;
+  font-family: var(--font-primary);
+  text-align: center;
+  line-height: 3em;
+  padding: 1em;
+}
+.small-offer-middle i {
+  padding: 1em 0;
+  text-align: center;
+}
+.small-offer-left,
+.small-offer-right {
+  display: flex;
+  justify-content: center;
+  flex: 0.2;
+  padding: 1em;
+  margin: 1em 0;
+}
+.small-offer-left img,
+.small-offer-right img {
+  box-shadow: var(--shadow-standard);
+  border-radius: 10px;
+}
 
-
+@media screen and (max-width: 700px) {
+  .small-offer-middle {
+    min-width: 200px;
+  }
+}
+@media screen and (max-width: 1650px) {
+  .small-offer {
+    flex-direction: column;
+  }
+  .small-offer-left,
+  .small-offer-right,
+  .small-offer-middle {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0em auto;
+  }
+  .small-offer-right {
+    display: flex;
+  }
+}
