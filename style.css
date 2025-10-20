@@ -140,5 +140,38 @@ nav {
     font-size: 3em; /* Zmniejsz czcionkę, jeśli jest za duża */
   }
 }
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  /* 1. Zmień wysokość kontenera, aby dostosował się do zawartości */
+  .hero {
+    height: auto; /* KLUCZOWA ZMIANA: Pozwól, aby wysokość dopasowała się do zawartości */
+    padding-bottom: 3rem; /* Dodaj trochę przestrzeni na dole */
+  }
+}
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  /* 1. Zmień wysokość, aby zapewnić, że tło zakryje cały ekran */
+  .hero {
+    min-height: 100vh; /* KLUCZOWA ZMIANA: Zapewnij minimalną wysokość 100% ekranu */
+    height: 100vh; /* Zostaw 100vh, ale zredukuj zawartość */
+    padding-bottom: 3rem; /* Opcjonalnie: Dodatkowa przestrzeń na dole */
+  }
 
+  /* 2. Zredukuj wszystkie marginesy i czcionki (aby zawartość zmieściła się w 100vh) */
+  .nav-welcome {
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+  .nav-welcome h1 {
+    font-size: 2.5em; /* Zmniejsz czcionkę H1 drastycznie */
+    line-height: 1.2em;
+  }
+  .nav-welcome p {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+
+  /* 3. Poprawka dla navbaru */
+  nav {
+    margin-bottom: 0.5rem;
+  }
+}
 
