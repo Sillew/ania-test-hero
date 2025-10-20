@@ -108,7 +108,7 @@ nav {
 /* ========================================= */
 
 /* Optymalizacja dla Tabletów (900px) i Telefonów */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   /* Sekcja: HERO / Nav */
   .nav-links {
     display: none; /* Ukryj pełne menu na telefonie */
@@ -176,6 +176,7 @@ nav {
     margin-bottom: 0.5rem;
   }
 }
+
 
 
 
