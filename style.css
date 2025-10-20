@@ -83,7 +83,7 @@ nav {
 .nav-welcome {
   /* border: 3px dotted grey; */
   margin-top: 20vh;
-  margin-left: 10dvw;
+  margin-left: 10vw;
 }
 .nav-welcome h1 {
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
@@ -140,3 +140,4 @@ nav {
     font-size: 3em; /* Zmniejsz czcionkę, jeśli jest za duża */
   }
 }
+
