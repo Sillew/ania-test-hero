@@ -423,3 +423,228 @@ nav {
     margin: 0 auto;
   }
 }
+/* ========================================= */
+/* Sekcja: Zdjecia obracane 
+/* ========================================= */
+.fotki180st h1 {
+  text-align: center;
+  margin: 8em 0 -5em 0;
+  font-family: var(--font-primary);
+}
+.main180 {
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5em;
+  padding: 30px;
+  margin: 15em 0 5em 0;
+  background-image: url(./lapki3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.flip-card {
+  width: 90%;
+  max-width: 400px;
+  /* height: 300px; */
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: var(--shadow-standard);
+}
+
+.flip-card-back {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1.5em;
+  background-color: #f1f1f1;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+@media screen and (max-width: 900px) {
+  /* ... inne poprawki ... */
+  .main180 {
+    gap: 2em; /* Zmniejsz odstęp między elementami na telefonie */
+    margin: 5em 0; /* Zmniejsz margines pionowy */
+  }
+  .flip-card {
+    max-width: 90%; /* Zapewnij, że karty nie będą za szerokie */
+  }
+}
+@media screen and (max-width: 450px) {
+  .flip-card-front,
+  .flip-card-back {
+    margin-top: 3em;
+    border-radius: 0px;
+    box-shadow: none;
+    background: red;
+    height: 100%;
+    height: fit-content;
+    border-radius: 10px;
+  }
+  .flip-card-front img {
+    max-width: 100%;
+    height: 250px;
+  }
+}
+/* ========================================= */
+/* Sekcja: KARUZELA
+/* ========================================= */
+
+.carosuel-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  height: 50vh;
+  margin: 5em 0;
+}
+.carosuel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.card {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: auto;
+  height: 250px;
+  aspect-ratio: 4/3;
+  background: rgb(120, 200, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 450px) {
+  .card {
+    height: 150px;
+    aspect-ratio: 4/3;
+    background: none;
+    background-color: bisque;
+  }
+  .card img {
+    width: 200px;
+    height: 100%;
+    aspect-ratio: unset;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}
+
+/* ========================================= */
+/* Sekcja: KONTAKT 
+/* ========================================= */
+
+.contact {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+  flex-wrap: wrap;
+  scroll-margin-top: 250px;
+  padding: 0 1em;
+}
+.lewy-tekst {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+  font-size: 2em;
+  margin: 2em 0;
+  height: 100%;
+}
+.dane {
+  padding: 1em;
+  display: block;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: var(--shadow-standard);
+  margin: auto;
+  text-align: center;
+}
+.email-link {
+  cursor: pointer;
+  font-size: 1em;
+  color: #333;
+  text-decoration: none;
+}
+
+.prawy-obraz {
+  flex: 1;
+}
+.prawy-obraz img {
+  width: 100%;
+}
+@media screen and (max-width: 450px) {
+  .contact {
+    flex-direction: column;
+  }
+  .prawy-obraz {
+    margin-bottom: 3em;
+  }
+}
+
+/* ========================================= */
+/* Sekcja: FOOTER
+/* ========================================= */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 10vh;
+  margin: 5em 0 0 0;
+}
+footer > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #000000;
+}
