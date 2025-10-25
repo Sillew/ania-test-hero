@@ -352,7 +352,6 @@ nav {
   justify-content: center;
 }
 .omnie-opis-tekst {
-  align-content: center;
   text-align: justify;
   width: 400px;
   padding: 0 2em;
@@ -363,6 +362,12 @@ nav {
 .omnie-opis-tekst h3 {
   font-size: 1.5em;
 }
+.omnie button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .omnie button {
   font-family: var(--font-primary);
   font-size: 1.5em;
@@ -446,7 +451,6 @@ nav {
 .flip-card {
   width: 90%;
   max-width: 400px;
-  /* height: 300px; */
   perspective: 1000px;
   cursor: pointer;
   margin: 0 auto;
@@ -550,8 +554,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  /* border-radius: 10px; */
   margin: 0 10px;
+}
+.card img {
+  border-radius: 20px;
 }
 @keyframes scroll {
   0% {
@@ -576,6 +583,76 @@ nav {
     object-fit: cover;
   }
 }
+/* ========================================= */
+/* Sekcja: ROZWIJANA OFERTA - akordeon
+/* ========================================= */
+.wrapper {
+  display: block;
+  padding-top: 70px;
+  justify-content: center;
+}
+.collapsible {
+  max-width: 700px;
+  overflow: hidden;
+  font-weight: 500;
+  margin: auto;
+}
+.collapsible input {
+  display: none;
+}
+.collapsible label {
+  font-size: 2em;
+  font-family: var(--font-primary);
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  background: #fff;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+  color: #1c1c6b;
+  display: block;
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 1;
+}
+.collapsible label:after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+}
+
+.colapsible-text {
+  max-height: 1px;
+  overflow: hidden;
+  border-radius: 4px;
+  line-height: 1.4;
+  position: relative;
+  top: -100%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+.collapsible input:checked ~ .colapsible-text {
+  max-height: 500px;
+  padding-bottom: 25px;
+  background: #fff;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+  opacity: 1;
+  top: 0;
+}
+.colapsible-text h2 {
+  font-family: var(--font-primary);
+  margin-bottom: 10px;
+  padding: 15px 15px 0;
+  color: #1c1c6b;
+}
+.colapsible-text p {
+  padding: 0 15px;
+  font-family: var(--font-primary);
+}
 
 /* ========================================= */
 /* Sekcja: KONTAKT 
@@ -585,14 +662,14 @@ nav {
   height: fit-content;
   display: flex;
   align-items: center;
-  margin: 1em 0;
+  justify-content: space-evenly;
+  margin: 15em 0;
   flex-wrap: wrap;
   scroll-margin-top: 250px;
   padding: 0 1em;
 }
 .lewy-tekst {
   display: flex;
-  flex: 1;
   justify-content: center;
   align-content: center;
   font-size: 2em;
@@ -616,7 +693,7 @@ nav {
 }
 
 .prawy-obraz {
-  flex: 1;
+  max-width: 600px;
 }
 .prawy-obraz img {
   width: 100%;
