@@ -31,29 +31,62 @@
   <body>
     <div class="hero">
       <nav>
-        <div class="logo"><img src="./black_paw.png" alt="" /></div>
-        <ul class="nav-links">
-          <li><a href="#">GŁÓWNA</a></li>
-          <li><a href="#omnie">O MNIE</a></li>
-          <li><a href="./offer-PL.html">CENNIK</a></li>
-          <li><a href="#contact">KONTAKT</a></li>
-        </ul>
-        <div class="language">
-          <a href="./index-PL.html" title="Strona PL" class="btn"
-            ><span class="fi fi-pl"></span
-          ></a>
-          <a href="./index-GB.html" title="Strona PL" class="btn"
-            ><span class="fi fi-gb"></span
-          ></a>
-          <a href="./index-FR.html" title="Strona PL" class="btn"
-            ><span class="fi fi-fr"></span
-          ></a>
+        <div class="logo">
+          <img src="./black_paw.png" alt="" />
+        </div>
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32"
+            viewBox="0 -960 960 960"
+            width="32"
+            fill="#173d6f"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+          <label for="sidebar-active" class="close-sidebar-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32"
+              viewBox="0 -960 960 960"
+              width="32"
+              fill="#173d6f"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </label>
+
+          <a href="#"><span class="underline">GŁÓWNA</span></a>
+          <a href="#omnie"><span class="underline">O MNIE</span></a>
+          <a href="#cennik"><span class="underline">CENNIK</span></a>
+          <a href="#contact"><span class="underline">KONTAKT</span></a>
+
+          <div class="language">
+            <a href="./index-PL.html" title="Strona PL" class="btn"
+              ><span class="fi fi-pl"></span
+            ></a>
+            <a href="./index-GB.html" title="Strona EN" class="btn"
+              ><span class="fi fi-gb"></span
+            ></a>
+            <a href="./index-FR.html" title="Strona FR" class="btn"
+              ><span class="fi fi-fr"></span
+            ></a>
+          </div>
         </div>
       </nav>
       <div class="nav-welcome">
-        <h1>Zrozum.</h1>
-        <h1>Zaufaj.</h1>
-        <h1>Zatrzymaj.</h1>
+        <h1>ZROZUM</h1>
+        <h1>ZAUFAJ</h1>
+        <h1>ZATRZYMAJ</h1>
+        <br />
         <p>Pomagam opiekunom kotów i innych zwierząt</p>
         <p>budować spokój, więź i piękne wspomnienia.</p>
       </div>
@@ -100,7 +133,6 @@
         </div>
         <div class="omnie-opis">
           <div class="omnie-opis-tekst">
-            <!-- <h3>O mnie</h3> -->
             <br />
             <p>
               Nazywam się Anna-Maria Bąk.<br /><br />
@@ -112,7 +144,99 @@
               indywidualny, ponieważ każde zwierzę ma swój unikalny charakter i
               swoje własne bogate życie emocjonalne.
             </p>
-            <button>Dowiedz się wiecej</button>
+          </div>
+        </div>
+      </div>
+      <div class="omnie-akordeon">
+        <div class="main-wrapper">
+          <div class="wrapper">
+            <div class="collapsible">
+              <input type="checkbox" id="colapsible-head" />
+              <label for="colapsible-head">Dowiedz się więcej</label>
+              <div class="colapsible-text">
+                <h2></h2>
+                <p>
+                  W
+                  <b>COAPE Polska (Centre of Applied Pet Ethology)</b>
+                  ukończyłam kurs dyplomowy nadający brytyjskie kwalifikacje
+                  behawiorysty zwierzęcego, a także kurs <b>THINK CAT</b> i kurs
+                  petsiterski.
+                </p>
+                <br />
+                <p>
+                  Podczas studiów biologicznych zdobyłam gruntowną wiedzę z
+                  <b>anatomii, fizjologii, ekologii i etologii zwierząt.</b>
+                </p>
+                <br />
+                <p>
+                  Aby poszerzyć kompetencje w zakresie medycyny behawioralnej
+                  kotów, ukończyłam
+                  <b>Zaawansowany Kurs dla Behawiorystów Kotów PET IDEA</b> ,
+                  prowadzony przez
+                  <b>dr n.med., lekarza weterynarii Martynę Woszczyło.</b>
+                </p>
+                <br />
+                <p>
+                  Regularnie uczestniczę w kursach, webinarach i konferencjach
+                  branżowych, aby stale podnosić swoje kwalifikacje i
+                  aktualizować wiedzę.
+                </p>
+                <h2>Moje podejście</h2>
+                <p>
+                  Moim głównym obszarem pracy i zainteresowań są
+                  <b>zaburzenia zachowania kotów</b> , jednak zapraszam również
+                  <b>opiekunów psów i innych zwierząt.</b>
+                </p>
+                <br />
+                <p>
+                  Do każdego zwierzęcia podchodzę z szacunkiem i w sposób
+                  indywidualny, ponieważ
+                  <b
+                    >każde zwierzę ma swój niepowtarzalny charakter i bogate
+                    życie emocjonalne.</b
+                  >
+                </p>
+                <br />
+                <p>
+                  Równie ważny jest dla mnie
+                  <b>szacunek i empatia wobec opiekuna</b> , którego problem
+                  zawsze traktuję jako wyjątkowy i wymagający indywidualnego
+                  podejścia.
+                </p>
+                <br />
+                <p>
+                  Pracując z nowym przypadkiem, staram się
+                  <b>spojrzeć na świat z perspektywy kota</b> , ponieważ u
+                  podstaw każdego zachowania leżą emocje.
+                </p>
+                <br />
+                <p>
+                  Dlatego dokładnie analizuję emocje zwierzęcia, stopień
+                  zaspokojenia jego potrzeb gatunkowych oraz jego wcześniejsze
+                  doświadczenia.
+                </p>
+                <br />
+                <p>
+                  Pozwala mi to dotrzeć do źródła problemu i zaproponować
+                  <b>najbardziej skuteczną terapię behawioralną</b> ,
+                  dostosowaną do możliwości zarówno zwierzęcia, jak i opiekuna.
+                </p>
+                <br />
+                <p>
+                  Ważnym aspektem mojej pracy jest <b>edukacja opiekunów</b> -
+                  pomagam im lepiej zrozumieć ich zwierzę, które często wydaje
+                  się im tajemnicze.
+                </p>
+                <br />
+                <p>
+                  Tłumaczę potrzeby gatunkowe pupila, by mogli
+                  <b
+                    >zbudować z nim relację opartą na zaufaniu, szacunku i
+                    wzajemnym zrozumieniu</b
+                  >
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -249,7 +373,8 @@
         </div>
       </div>
     </div>
-    <div class="main-wrapper">
+    <div class="main-wrapper" id="cennik">
+      <h1>CENNIK</h1>
       <div class="wrapper">
         <div class="collapsible">
           <input type="checkbox" id="colapsible-head" />
@@ -364,7 +489,7 @@
         </div>
       </div>
     </div>
-    <section class="contact imageReveal" id="contact1">
+    <section class="contact imageReveal" id="contact">
       <div class="lewy-tekst">
         <div class="dane">
           <h3>Skontaktuj się ze mną</h3>

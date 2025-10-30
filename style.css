@@ -24,36 +24,83 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.logo {
+  padding: 0 20px;
+}
+.logo img {
+  height: 48px;
+}
+.language {
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
 
+.language a span {
+  font-size: 24px;
+  transition: 0.5s ease;
+}
+.language a span:hover {
+  scale: 1.5;
+}
 nav {
-  width: 100%;
-  padding: 1rem 5%;
+  height: 60px;
+  display: flex;
   background: rgba(255, 255, 255, 0.01);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  margin-bottom: 2rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0 auto;
+}
+nav a {
+  height: 100%;
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.logo img {
-  height: 50px;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 7vw;
-}
-.nav-links li a {
-  position: relative;
-  font-size: 1.1rem;
-  font-weight: 500;
   text-decoration: none;
-  color: #173d6f;
-  transition: color 0.3s;
+  color: rgb(41, 4, 4);
 }
-.nav-links li a::after {
+nav a span {
+  position: relative;
+}
+.nav-welcome {
+  position: flex;
+  flex-wrap: wrap;
+  flex: 0.5;
+  margin-top: 10em;
+  padding-left: 5vw;
+  text-wrap: balance;
+}
+.nav-welcome h1 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.3;
+  color: #fff;
+  -webkit-text-stroke: 1px #afa8a8;
+  text-shadow: 0 1px 0 #c7c7c7, 0 2px 0 #c7c7c7, 0 3px 0 #c7c7c7,
+    0 4px 0 #c7c7c7, 0 5px 0 #c7c7c7, 0 6px 0 #c7c7c7, 0 7px 0 #c7c7c7,
+    0 8px 0 #c7c7c7, 1px 15px 10px rgba(16, 16, 16, 0.3),
+    1px 20px 20px rgba(16, 16, 16, 0.2), 1px 25px 40px rgba(16, 16, 16, 0.2),
+    1px 30px 80px rgba(16, 16, 16, 0.3);
+}
+.nav-welcome p {
+  font-size: 2em;
+  line-height: 1.3;
+  color: black;
+  font-weight: 600;
+  -webkit-text-stroke: 1px grey;
+}
+.links-container .underline::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -65,118 +112,78 @@ nav {
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
-.nav-links li a:hover::after {
+.links-container .underline:hover::after {
   transform: scaleX(1);
   transform-origin: bottom;
 }
 
-.language {
-  display: flex;
-  gap: 20px;
+nav svg {
+  fill: rgb(43, 7, 7);
 }
-.language a {
-  display: inline-block;
-  scale: 1.5;
-  border: none;
-  cursor: pointer;
+#sidebar-active {
+  display: none;
 }
-.language a:hover {
-  transition: ease 0.5s all;
-  scale: 2;
-}
-.nav-welcome {
-  /* border: 3px dotted grey; */
-  margin-top: 20vh;
-  margin-left: 10vw; /* Zmieniono z dvw na vw dla kompatybilności */
-}
-.nav-welcome h1 {
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-    1px 1px 0 white;
-  line-height: 1.5em;
-  font-family: var(--font-primary);
-  font-weight: 1000;
-  font-size: 4em;
-}
-.nav-welcome p {
-  font-family: var(--font-primary);
-  font-size: 1.3em;
-  font-weight: 1000;
-  margin-top: 1em;
-  line-height: 1.3em;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-    1px 1px 0 white;
+.open-sidebar-button,
+.close-sidebar-button {
+  display: none;
 }
 
-/* ========================================= */
-/* MEDIA QUERIES (ODPOWIEDZIALNOŚĆ) - HERO SECTION */
-/* ========================================= */
-
-/* Optymalizacja dla Tabletów (900px) i Telefonów */
-@media screen and (max-width: 900px) {
-  /* Sekcja: HERO / Nav */
-  .nav-links {
-    display: none; /* Ukryj pełne menu na telefonie */
-    gap: 1vw;
+@media (max-width: 900px) {
+  .logo {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+    padding: 0;
+    margin-left: auto;
   }
-  .nav-links li a {
-    font-size: 1rem;
+  .links-container {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    height: 100vh;
+    background-color: rgba(243, 239, 246, 0.9);
+    backdrop-filter: blur(40px);
+    width: 250px;
+    /* background-color: rgb(243, 239, 246); */
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
   }
-  .nav-welcome h1 {
-    font-size: 2em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
-    line-height: 1.1em;
-  }
-  .nav-welcome p {
-    font-size: 1.1em;
-    line-height: 1.1em;
-  }
-
-  /* 2. Poprawka dla kontenera flag: Zmniejsz odległości i skalowanie */
   .language {
-    gap: 10px; /* Zmniejsz odstęp między flagami */
+    display: flex;
+    justify-content: center;
+    height: auto;
+    position: relative;
   }
-
-  /* 3. Poprawka dla samych flag: Zmniejsz skalę flag na telefonie */
   .language a {
-    scale: 1; /* KLUCZOWA ZMIANA: Wróć do skali 1 na telefonie */
+    justify-content: center;
   }
 
-  /* Opcjonalnie: Zmniejsz padding w nav, aby zwiększyć dostępną szerokość */
-  nav {
-    padding: 1rem 3%;
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    justify-content: flex-start;
   }
-
-  /* Opcjonalnie: Poprawka dla nagłówka powitalnego */
-  .nav-welcome {
-    margin-left: 5vw; /* Zmniejsz margines powitalny */
+  .open-sidebar-button,
+  .close-sidebar-button {
+    padding: 20px;
+    display: block;
   }
-  .nav-welcome h1 {
-    font-size: 3em; /* Zmniejsz czcionkę, jeśli jest za duża */
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
   }
-}
-
-/* Optymalizacja dla orientacji poziomej (Landscape Mode) */
-@media screen and (max-height: 600px) and (orientation: landscape) {
-  /* KLUCZOWE: Zapewnia, że tło pokrywa cały ekran, a zawartość się mieści */
-  .hero {
-    min-height: 100vh; /* Gwarantuje pokrycie tłem całego ekranu */
-    padding-bottom: 3rem;
-  }
-
-  /* Zredukuj wszystkie marginesy i czcionki (aby zawartość zmieściła się) */
-  .nav-welcome {
-    margin-top: 5vh;
-    margin-left: 5vw;
-  }
-  .nav-welcome h1 {
-    font-size: 2em; /* Mniejsza czcionka, aby zmieścić się w niskiej wysokości */
-    line-height: 1.1em;
-  }
-  .nav-welcome p {
-    font-size: 1.3em;
-    line-height: 1.1em;
-  }
-  nav {
-    margin-bottom: 0.5rem;
+  #sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
   }
 }
 
@@ -318,7 +325,7 @@ nav {
 
 .omnie {
   height: fit-content;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 50px;
   font-family: var(--font-primary);
 }
 
@@ -428,6 +435,95 @@ nav {
     margin: 0 auto;
   }
 }
+/* ========================================= */
+/* Sekcja: ROZWIJANA OFERTA - akordeon
+/* ========================================= */
+.main-wrapper {
+  scroll-margin-top: 20px;
+}
+.main-wrapper h1 {
+  font-size: 3em;
+  font-family: var(--font-primary);
+  color: #1c1c6b;
+  text-align: center;
+}
+.wrapper {
+  display: block;
+  padding-top: 70px;
+  justify-content: center;
+}
+.collapsible {
+  max-width: 70vw;
+  overflow: hidden;
+  font-weight: 500;
+  margin: auto;
+}
+.collapsible input {
+  display: none;
+}
+.collapsible label {
+  font-size: 2em;
+  font-family: var(--font-primary);
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  background: #fff;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+  color: #1c1c6b;
+  display: block;
+  margin: 0 10px;
+  cursor: pointer;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 1;
+}
+.collapsible label:after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+}
+
+.colapsible-text {
+  font-size: 1.5em;
+  text-align: justify;
+  max-height: 1px;
+  overflow: hidden;
+  border-radius: 4px;
+  line-height: 1.4;
+  position: relative;
+  top: -100%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+.collapsible input:checked ~ .colapsible-text {
+  max-height: 3000px;
+  padding-bottom: 25px;
+  background: #fff;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+  opacity: 1;
+  top: 0;
+}
+.colapsible-text h2 {
+  font-family: var(--font-primary);
+  margin-bottom: 10px;
+  padding: 15px 15px 0;
+  color: #1c1c6b;
+  text-align: center;
+}
+.colapsible-text p {
+  padding: 0 15px;
+  font-family: var(--font-primary);
+}
+
+@media (max-width: 450px) {
+  .collapsible {
+    max-width: 2000px;
+  }
+}
+
 /* ========================================= */
 /* Sekcja: Zdjecia obracane 
 /* ========================================= */
@@ -583,76 +679,6 @@ nav {
     object-fit: cover;
   }
 }
-/* ========================================= */
-/* Sekcja: ROZWIJANA OFERTA - akordeon
-/* ========================================= */
-.wrapper {
-  display: block;
-  padding-top: 70px;
-  justify-content: center;
-}
-.collapsible {
-  max-width: 700px;
-  overflow: hidden;
-  font-weight: 500;
-  margin: auto;
-}
-.collapsible input {
-  display: none;
-}
-.collapsible label {
-  font-size: 2em;
-  font-family: var(--font-primary);
-  text-align: center;
-  position: relative;
-  font-weight: 600;
-  background: #fff;
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
-  color: #1c1c6b;
-  display: block;
-  margin: 0 10px;
-  cursor: pointer;
-  padding: 30px;
-  border-radius: 10px;
-  z-index: 1;
-}
-.collapsible label:after {
-  content: "";
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 18px;
-  height: 18px;
-}
-
-.colapsible-text {
-  max-height: 1px;
-  overflow: hidden;
-  border-radius: 4px;
-  line-height: 1.4;
-  position: relative;
-  top: -100%;
-  opacity: 0.5;
-  transition: all 0.3s ease;
-}
-.collapsible input:checked ~ .colapsible-text {
-  max-height: 500px;
-  padding-bottom: 25px;
-  background: #fff;
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
-  opacity: 1;
-  top: 0;
-}
-.colapsible-text h2 {
-  font-family: var(--font-primary);
-  margin-bottom: 10px;
-  padding: 15px 15px 0;
-  color: #1c1c6b;
-}
-.colapsible-text p {
-  padding: 0 15px;
-  font-family: var(--font-primary);
-}
 
 /* ========================================= */
 /* Sekcja: KONTAKT 
@@ -665,7 +691,7 @@ nav {
   justify-content: space-evenly;
   margin: 15em 0;
   flex-wrap: wrap;
-  scroll-margin-top: 250px;
+  scroll-margin-top: 220px;
   padding: 0 1em;
 }
 .lewy-tekst {
@@ -694,9 +720,15 @@ nav {
 
 .prawy-obraz {
   max-width: 600px;
+  /* border: 3px dotted black; */
+  border-radius: 10px;
+  box-shadow: var(--shadow-standard);
 }
 .prawy-obraz img {
   width: 100%;
+  border-radius: 10px;
+  display: block;
+  box-shadow: var(--shadow-standard);
 }
 @media screen and (max-width: 450px) {
   .contact {
