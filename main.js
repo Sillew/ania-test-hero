@@ -1,4 +1,4 @@
-const blogs = document.querySelectorAll(".blog > div");
+const blogs = document.querySelectorAll(".blog-beha > div, .blog-mit > div");
 const modal = document.querySelector(".blog-modal");
 
 blogs.forEach((blog) => {
