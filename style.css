@@ -440,14 +440,15 @@ nav svg {
     margin: 0 auto;
   }
 }
-@media (max-width: 360px) {
+@media screen and (max-width: 450px) {
   .omnie-glowne {
     gap: 0;
   }
   .omnie-opis-tekst {
-    width: 350px;
+    width: 90dvw;
   }
 }
+
 /* ========================================= */
 /* Sekcja: KONSULTACJE
 /* ========================================= */
@@ -477,11 +478,11 @@ nav svg {
   font-size: 1.5em;
   font-weight: 500;
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .consultation {
-    width: 100%;
-    margin: 0;
-    padding: 0.2em;
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
     text-wrap: pretty;
     box-shadow: none;
   }
@@ -687,6 +688,9 @@ h3 {
     width: 90dvw;
     padding: 1em;
     gap: 0;
+  }
+  .blog-modal {
+    display: none !important;
   }
 }
 
@@ -1054,19 +1058,20 @@ footer a {
   padding-left: 15px;
   padding-top: 5px;
 }
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   footer {
     display: flex;
     flex-direction: column;
     font-size: 1em;
+    row-gap: 2em;
+    height: fit-content;
   }
   .name {
+    width: 100%;
     padding-top: 1em;
   }
-  .websites {
-    display: block;
-    width: 30dvw;
-    margin: 0 auto;
+  .adres {
+    width: 100%;
   }
 }
 /* ========================================= */
