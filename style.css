@@ -665,6 +665,9 @@ h3 {
     padding: 1em;
     gap: 0;
   }
+  .blog-modal {
+    display: none !important;
+  }
 }
 @media (max-width: 450px) {
   .blog {
