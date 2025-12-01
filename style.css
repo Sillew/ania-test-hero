@@ -762,7 +762,7 @@ h3 {
   transition: all 0.3s ease;
 }
 .collapsible input:checked ~ .colapsible-text {
-  max-height: 3000px;
+  max-height: 5000px;
   padding-bottom: 25px;
   /* background: #fff; */
   background-color: #fefae0;
