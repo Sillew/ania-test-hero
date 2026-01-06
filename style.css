@@ -130,6 +130,9 @@ nav svg {
 }
 
 @media (max-width: 900px) {
+  .nav-welcome h1 {
+    -webkit-text-stroke: 1px black;
+  }
   .logo {
     position: absolute;
     top: 4px;
